@@ -1,5 +1,6 @@
 # Leetocde-Notebook
 ##目录
 |Index|Title|Difficulty|
-|Stack|
+|:-:|:-:|:-:|
+|Stack| | |
 |232| Implement Queue using Stacks|easy|
