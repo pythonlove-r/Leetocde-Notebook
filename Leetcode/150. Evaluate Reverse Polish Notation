@@ -1,0 +1,30 @@
+class Solution {
+    public int evalRPN(String[] tokens) {
+        Deque<Integer> deque=new LinkedList<>();
+        for(String s:tokens){
+            //非常重要：比较字符串a和b是否相等，不能用a==b,而应该用a.equals(b)
+            if(!("+".equals(s) || "-".equals(s) || "*".equals(s) || "/".equals(s))){
+                deque.push(Integer.valueOf(s));
+            }else{
+                int y=deque.removeFirst();
+                int x=deque.removeFirst();
+                switch(s){    
+                case "+":
+                    deque.addFirst(x+y);
+                    break;
+                case "-":
+                    deque.addFirst(x-y);
+                    break;
+                case "*":
+                    deque.addFirst(x*y);
+                    break;
+                case "/":
+                    deque.addFirst(x/y);
+                    break;   
+                default:
+                }
+            }
+        }
+        return deque.removeFirst();    
+    }
+}
