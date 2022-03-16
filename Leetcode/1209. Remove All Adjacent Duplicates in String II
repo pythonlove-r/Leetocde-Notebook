@@ -1,0 +1,32 @@
+class Solution {
+    public String removeDuplicates(String s, int k) {
+        //stack除了可以存储string,int，还可以存储数组
+        Stack<int[]> stack=new Stack<>();
+        //toCharArray()将string变成字符串数组
+        for(char c: s.toCharArray()){
+            //判断字符串相等a==b
+            //判断string是否相等a.equals(b)
+            if(!stack.isEmpty()&&c==stack.peek()[0]){
+                stack.peek()[1]++;
+            }else{
+                stack.push(new int[]{c,1});
+            }
+            if(!stack.isEmpty()&stack.peek()[1]==k){
+                stack.pop();
+            }
+        }
+        //将stack剩下的元素取出来并保存为string格式
+        StringBuilder sb=new StringBuilder();
+        while(!stack.isEmpty()){
+            int[] top=stack.pop();
+            while(top[1]-->0){
+                sb.append((char)top[0]);//为啥加（char),最开始不是把c转换成char了麻，数组中中的{c,1}分别是什么数据类型
+            }
+            
+        }
+        //sb.reverse()将string反序排列
+        //sb.tostring:char to string
+        return sb.reverse().toString();
+        
+    }
+}
