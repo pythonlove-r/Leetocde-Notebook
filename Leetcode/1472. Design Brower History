@@ -8,7 +8,7 @@ class BrowserHistory {
     public void visit(String url) {
     //visist后需要清空forward 
     public void visit(String url) {history
-        s2.clear();
+        s2.clear(); //清空stack
         s1.push(url);
 
     }
