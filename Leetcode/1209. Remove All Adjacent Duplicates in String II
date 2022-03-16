@@ -28,7 +28,6 @@ class Solution {
         //sb.reverse()将string反序排列
         //sb.tostring:char to string
         return sb.reverse().toString();
-        
     }
 }
 
