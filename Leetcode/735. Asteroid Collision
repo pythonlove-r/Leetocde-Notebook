@@ -1,0 +1,29 @@
+class Solution {
+    //output must be[-,-,-,...,+,+,+]
+    //+:always push it into the stack
+    //-:empty or top of the stack is -, push;top is +,simulte
+    //O(n),O(n)
+    public int[] asteroidCollision(int[] asteroids) {
+        Stack<Integer> stack=new Stack<>();
+        for(int i:asteroids){
+            if(i>0){
+                stack.push(i);
+            }else{
+                while(!stack.isEmpty()&&stack.peek()>0&&stack.peek()<Math.abs(i)){
+                    stack.pop();
+                }
+                if(stack.isEmpty()||stack.peek()<0){
+                    stack.push(i);
+                }else if(stack.peek()+i==0){
+                    stack.pop();
+                }
+            }
+        }
+        int arr[]=new int[stack.size()];
+        for(int j=stack.size()-1;j>=0;j--){
+            arr[j]=stack.pop();
+        }
+        
+        return arr;
+    }
+}
