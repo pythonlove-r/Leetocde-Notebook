@@ -1,0 +1,15 @@
+http://c.biancheng.net/view/6843.html
+ArrayList常用方法：（a是一个ArrayList)
+a.get(i):返回a在索引i处的值
+a.index(o):返回a第一次出现o的索引，若a不存在o，返回-1
+a.lastIndexOf(o)
+a.set(1,o):将a索引1处的值设为1
+a.subList(1,3):返回索引[1,3)处所有元素的值
+
+
+https://blog.csdn.net/weixin_44217401/article/details/104163276
+Queue常用方法：
+add,offer,put
+remove,poll,take
+peek,element
+addAll
