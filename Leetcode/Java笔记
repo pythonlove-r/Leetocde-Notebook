@@ -19,3 +19,9 @@ map.put(key,value)
 map.get(key)返回key对应的value
 map.containsKey(key)
 map.containsValue(value)
+
+
+//各种数据结构长度
+arraylist.size()
+matrix.length行
+matrix[0].length列
