@@ -25,3 +25,4 @@ map.containsValue(value)
 arraylist.size()
 matrix.length行
 matrix[0].length列
+queue.size()
