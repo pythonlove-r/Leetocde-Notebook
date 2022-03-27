@@ -22,6 +22,7 @@ map.containsValue(value)
 
 
 //各种数据结构长度
+list.size()
 arraylist.size()
 matrix.length行
 matrix[0].length列
