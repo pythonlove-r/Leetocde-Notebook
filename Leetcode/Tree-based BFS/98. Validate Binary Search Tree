@@ -1,0 +1,24 @@
+Method 1:
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        return isValid(root, null, null);
+    }
+    public boolean isValid(TreeNode root, TreeNode minnode, TreeNode maxnode){
+        if(root==null) return true;
+        if((minnode!=null&&root.val<=minnode.val)||(maxnode!=null&&root.val>=maxnode.val)) return false;
+        return isValid(root.left, minnode, root)&&isValid(root.right, root,maxnode);
+    }
+}
+
+Method 2: In-order traversal
+class Solution {
+    TreeNode prev=null;
+    public boolean isValidBST(TreeNode node) {
+        if(node==null) return true;
+        if(isValidBST(node.left)==false) return false;
+        if(prev!=null && prev.val>=node.val) return false;
+        prev=node;
+        return isValidBST(node.right);
+    }
+   
+}
