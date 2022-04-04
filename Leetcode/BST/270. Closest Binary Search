@@ -14,17 +14,17 @@
  * }
  */
 class Solution {
-    public int cloestValue(TreeNode root) {
-        min_diff=Integer.MAX_VALUE;
-        inorder(root);
-        return min_diff;
+    public int cloestValue(TreeNode root, double target) {
+        TreeNode n=root;
+        int cur=root.val;
+        while(n!=null){
+            //第七行报错，不知道为啥
+            if(Math.abs(n.val-target)<Math.abs(cur-target)){
+                cur=n.val;
+            }
+            n=n.val>target?n.left:n.right;
+        }
+        return cur;
     }
-    public void inorder(TreeNode root, double target){
-        if(root==null) return;
-        inorder(root.left);
-        min_diff=Math.min(min_diff,root.val-target);
-        inorder(root.right);
-    }
-    //prev和min_diff的区别，一个是整数，一个是整数指针？
-    private int min_diff;
+    
 }
