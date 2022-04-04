@@ -1,0 +1,30 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int cloestValue(TreeNode root) {
+        min_diff=Integer.MAX_VALUE;
+        inorder(root);
+        return min_diff;
+    }
+    public void inorder(TreeNode root, double target){
+        if(root==null) return;
+        inorder(root.left);
+        min_diff=Math.min(min_diff,root.val-target);
+        inorder(root.right);
+    }
+    //prev和min_diff的区别，一个是整数，一个是整数指针？
+    private int min_diff;
+}
