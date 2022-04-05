@@ -29,7 +29,7 @@
 |783	|Minimum Distance Between BST Nodes	|56.0%	Easy|	
 |270	|Closest Binary Search Tree Value|53.6%	Easy	|
 |703	|Kth Largest Element in a Stream	|52.7%	Easy	|
-|501	|Find Mode in Binary Search Tree	|47.0%	Easy|
+|501	|Find Mode in Binary Search Tree	|47.0%	Easy
 938	
 Range Sum of BST	85.0%	Easy	
 1469	
